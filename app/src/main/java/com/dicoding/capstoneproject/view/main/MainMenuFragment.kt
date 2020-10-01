@@ -11,8 +11,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.capstoneproject.R
-import com.dicoding.capstoneproject.core.data.Resource
-import com.dicoding.capstoneproject.core.ui.KamusAdapter
+import com.dicoding.core.data.Resource
+import com.dicoding.core.ui.KamusAdapter
 import com.dicoding.capstoneproject.view.detail.DetailKamusActivity
 import kotlinx.android.synthetic.main.fragment_main_menu.*
 import kotlinx.android.synthetic.main.view_error.*

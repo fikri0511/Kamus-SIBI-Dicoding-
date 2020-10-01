@@ -3,10 +3,9 @@ package com.dicoding.capstoneproject.view.detail
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.dicoding.capstoneproject.R
-import com.dicoding.capstoneproject.core.domain.model.Kamus
+import com.dicoding.core.domain.model.Kamus
 import kotlinx.android.synthetic.main.activity_detail_kamus.*
 import kotlinx.android.synthetic.main.content_detail_kamus.*
 import org.koin.android.viewmodel.ext.android.viewModel

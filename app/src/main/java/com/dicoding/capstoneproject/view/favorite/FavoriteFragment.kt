@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.capstoneproject.R
-import com.dicoding.capstoneproject.core.ui.KamusAdapter
+import com.dicoding.core.ui.KamusAdapter
 import com.dicoding.capstoneproject.view.detail.DetailKamusActivity
 import kotlinx.android.synthetic.main.fragment_favorite.*
 import org.koin.android.viewmodel.ext.android.viewModel

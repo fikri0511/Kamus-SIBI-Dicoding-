@@ -1,9 +1,9 @@
 package com.dicoding.capstoneproject
 
 import android.app.Application
-import com.dicoding.capstoneproject.core.di.databaseModule
-import com.dicoding.capstoneproject.core.di.networkModule
-import com.dicoding.capstoneproject.core.di.repositoryModule
+import com.dicoding.core.di.databaseModule
+import com.dicoding.core.di.networkModule
+import com.dicoding.core.di.repositoryModule
 import com.dicoding.capstoneproject.di.useCaseModule
 import com.dicoding.capstoneproject.di.viewModelModule
 import org.koin.android.ext.koin.androidContext

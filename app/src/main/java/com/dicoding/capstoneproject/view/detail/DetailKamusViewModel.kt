@@ -1,8 +1,8 @@
 package com.dicoding.capstoneproject.view.detail
 
 import androidx.lifecycle.ViewModel
-import com.dicoding.capstoneproject.core.domain.model.Kamus
-import com.dicoding.capstoneproject.core.domain.usecase.KamusUseCase
+import com.dicoding.core.domain.model.Kamus
+import com.dicoding.core.domain.usecase.KamusUseCase
 
 
 class DetailKamusViewModel(private val kamusUseCase: KamusUseCase) : ViewModel() {

@@ -1,7 +1,7 @@
 package com.dicoding.capstoneproject.di
 
-import com.dicoding.capstoneproject.core.domain.usecase.KamusInteractor
-import com.dicoding.capstoneproject.core.domain.usecase.KamusUseCase
+import com.dicoding.core.domain.usecase.KamusInteractor
+import com.dicoding.core.domain.usecase.KamusUseCase
 import com.dicoding.capstoneproject.view.detail.DetailKamusViewModel
 import com.dicoding.capstoneproject.view.favorite.FavoriteViewModel
 import com.dicoding.capstoneproject.view.main.MainMenuViewModel
