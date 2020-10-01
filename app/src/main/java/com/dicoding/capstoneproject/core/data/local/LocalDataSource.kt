@@ -5,7 +5,7 @@ import com.dicoding.capstoneproject.core.data.local.entity.KamusEntity
 import com.dicoding.capstoneproject.core.data.local.room.KamusDao
 import kotlinx.coroutines.flow.Flow
 
-class LocalDataSource private constructor(private val kamusDao: KamusDao) {
+class LocalDataSource public constructor(private val kamusDao: KamusDao) {
 
     companion object {
         private var instance: LocalDataSource? = null

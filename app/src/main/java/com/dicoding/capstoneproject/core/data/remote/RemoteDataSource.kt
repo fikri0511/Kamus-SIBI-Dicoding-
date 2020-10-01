@@ -17,7 +17,7 @@ import retrofit2.Response
 import java.lang.Exception
 
 
-class RemoteDataSource private constructor(private val apiService: ApiService) {
+class RemoteDataSource public constructor(private val apiService: ApiService) {
     companion object {
         @Volatile
         private var instance: RemoteDataSource? = null

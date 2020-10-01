@@ -13,15 +13,17 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.capstoneproject.R
 import com.dicoding.capstoneproject.core.data.Resource
 import com.dicoding.capstoneproject.core.ui.KamusAdapter
-import com.dicoding.capstoneproject.core.ui.ViewModelFactory
 import com.dicoding.capstoneproject.view.detail.DetailKamusActivity
 import kotlinx.android.synthetic.main.fragment_main_menu.*
 import kotlinx.android.synthetic.main.view_error.*
+import org.koin.android.viewmodel.ext.android.viewModel
+
 
 
 class MainMenuFragment : Fragment() {
 
-    private lateinit var mainMenuViewModel: MainMenuViewModel
+    private  val mainMenuViewModel :MainMenuViewModel by viewModel()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,9 +43,6 @@ class MainMenuFragment : Fragment() {
                 intent.putExtra(DetailKamusActivity.EXTRA_DATA, selectedData)
                 startActivity(intent)
             }
-
-            val factory = ViewModelFactory.getInstance(requireActivity())
-            mainMenuViewModel = ViewModelProvider(this, factory)[MainMenuViewModel::class.java]
 
             mainMenuViewModel.kamus.observe(viewLifecycleOwner, Observer { kamus ->
                 if (kamus != null) {

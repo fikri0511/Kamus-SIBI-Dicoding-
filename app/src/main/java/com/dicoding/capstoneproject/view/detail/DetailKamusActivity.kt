@@ -7,14 +7,14 @@ import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.dicoding.capstoneproject.R
 import com.dicoding.capstoneproject.core.domain.model.Kamus
-import com.dicoding.capstoneproject.core.ui.ViewModelFactory
 import kotlinx.android.synthetic.main.activity_detail_kamus.*
 import kotlinx.android.synthetic.main.content_detail_kamus.*
+import org.koin.android.viewmodel.ext.android.viewModel
 
 
 class DetailKamusActivity : AppCompatActivity() {
 
-    private lateinit var detailKamusViewModel: DetailKamusViewModel
+    private val detailKamusViewModel: DetailKamusViewModel by viewModel()
 
     companion object {
         const val EXTRA_DATA = "extra_data"
@@ -24,9 +24,6 @@ class DetailKamusActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_kamus)
         setSupportActionBar(toolbar)
-
-        val factory = ViewModelFactory.getInstance(this)
-        detailKamusViewModel = ViewModelProvider(this, factory)[DetailKamusViewModel::class.java]
 
         val detailKamus = intent.getParcelableExtra<Kamus>(EXTRA_DATA)
         showDetailKamus(detailKamus)
@@ -54,7 +51,12 @@ class DetailKamusActivity : AppCompatActivity() {
         if (statusFavorite) {
             fab.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_favorite_putih))
         } else {
-            fab.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_favorite_tidak_putih))
+            fab.setImageDrawable(
+                ContextCompat.getDrawable(
+                    this,
+                    R.drawable.ic_favorite_tidak_putih
+                )
+            )
         }
     }
 }

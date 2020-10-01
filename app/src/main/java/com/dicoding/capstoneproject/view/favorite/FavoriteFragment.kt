@@ -7,18 +7,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.capstoneproject.R
 import com.dicoding.capstoneproject.core.ui.KamusAdapter
-import com.dicoding.capstoneproject.core.ui.ViewModelFactory
 import com.dicoding.capstoneproject.view.detail.DetailKamusActivity
 import kotlinx.android.synthetic.main.fragment_favorite.*
+import org.koin.android.viewmodel.ext.android.viewModel
 
 
 class FavoriteFragment : Fragment() {
 
-    private lateinit var favoriteViewModel: FavoriteViewModel
+    private val favoriteViewModel: FavoriteViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,8 +38,6 @@ class FavoriteFragment : Fragment() {
                 startActivity(intent)
             }
 
-            val factory = ViewModelFactory.getInstance(requireActivity())
-            favoriteViewModel = ViewModelProvider(this, factory)[FavoriteViewModel::class.java]
 
             favoriteViewModel.favoriteKamus.observe(viewLifecycleOwner, Observer { dataKamus ->
                 kamusAdapter.setData(dataKamus)
