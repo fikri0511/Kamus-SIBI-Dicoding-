@@ -27,7 +27,7 @@ object DataMapper {
             Kamus(
                 idkata = it.idkata,
                 image = it.image,
-                isFavorite = false,
+                isFavorite = it.isFavorite,
                 namakata = it.namakata,
                 deskripsi = it.deskripsi,
                 kategori = it.kategori
@@ -37,7 +37,7 @@ object DataMapper {
     fun mapDomainToEntity(input: Kamus) = KamusEntity(
         idkata = input.idkata,
         image = input.image,
-        isFavorite = false,
+        isFavorite = input.isFavorite,
         namakata = input.namakata,
         deskripsi = input.deskripsi,
         kategori = input.kategori

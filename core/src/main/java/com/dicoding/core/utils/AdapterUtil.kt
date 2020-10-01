@@ -7,10 +7,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
 
-class AdapterUtil<T>(var layout: Int,
-                     private var items: List<T>,
-                     var view:(View, T) -> Unit,
-                     var handler:(Int, T) -> Unit): RecyclerView.Adapter<AdapterUtil.ViewHolder<T>>() {
+class AdapterUtil<T>(
+    var layout: Int,
+    private var items: List<T>,
+    var view: (View, T) -> Unit,
+    var handler: (Int, T) -> Unit
+) : RecyclerView.Adapter<AdapterUtil.ViewHolder<T>>() {
 
     var data = this.items
         set(value) {
@@ -18,7 +20,7 @@ class AdapterUtil<T>(var layout: Int,
             notifyDataSetChanged()
         }
 
-    class ViewHolder<T>(itemView: View): RecyclerView.ViewHolder(itemView) {
+    class ViewHolder<T>(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(item: T, view: (View, T) -> Unit) {
             view(itemView, item)
         }

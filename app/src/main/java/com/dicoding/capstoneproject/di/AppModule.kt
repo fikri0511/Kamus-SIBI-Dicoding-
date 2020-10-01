@@ -9,7 +9,7 @@ import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val useCaseModule = module {
-    factory <KamusUseCase> { KamusInteractor(get()) }
+    factory<KamusUseCase> { KamusInteractor(get()) }
 }
 
 val viewModelModule = module {

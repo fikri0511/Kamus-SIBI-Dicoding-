@@ -1,15 +1,13 @@
 package com.dicoding.capstoneproject.view.main
 
 import android.content.Intent
-import android.nfc.NfcAdapter.EXTRA_DATA
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import com.dicoding.capstoneproject.R
 import com.dicoding.core.data.Resource
 import com.dicoding.core.ui.KamusAdapter
@@ -19,10 +17,9 @@ import kotlinx.android.synthetic.main.view_error.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 
-
 class MainMenuFragment : Fragment() {
 
-    private  val mainMenuViewModel :MainMenuViewModel by viewModel()
+    private val mainMenuViewModel: MainMenuViewModel by viewModel()
 
 
     override fun onCreateView(
@@ -62,8 +59,7 @@ class MainMenuFragment : Fragment() {
             })
 
             with(rv_kamus) {
-                layoutManager = LinearLayoutManager(context)
-                setHasFixedSize(true)
+                layoutManager = GridLayoutManager(context, 2)
                 adapter = kamusAdapter
             }
         }

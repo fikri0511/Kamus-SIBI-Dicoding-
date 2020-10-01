@@ -2,4 +2,6 @@
 <resources>
     <dimen name="dp16">16dp</dimen>
     <dimen name="dp300">300dp</dimen>
+    <dimen name="dp140">140dp</dimen>
+    <dimen name="dp500">500dp</dimen>
 </resources>

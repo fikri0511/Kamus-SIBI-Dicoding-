@@ -24,7 +24,9 @@ class KamusAdapter : RecyclerView.Adapter<KamusAdapter.ListViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-        ListViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_list_kamus, parent, false))
+        ListViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.item_list_kamus, parent, false)
+        )
 
     override fun getItemCount() = listData.size
 

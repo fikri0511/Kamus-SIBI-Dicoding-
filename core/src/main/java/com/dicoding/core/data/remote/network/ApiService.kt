@@ -1,7 +1,6 @@
 package com.dicoding.core.data.remote.network
 
 import com.dicoding.core.data.remote.response.ListKamusResponse
-import retrofit2.Call
 import retrofit2.http.GET
 
 interface ApiService {

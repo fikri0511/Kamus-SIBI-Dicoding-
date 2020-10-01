@@ -5,13 +5,13 @@ import com.google.gson.annotations.SerializedName
 
 data class KamusResponse(
     @field:SerializedName("idkata")
-    var idkata:String,
+    var idkata: String,
     @field:SerializedName("namakata")
-    var namakata:String,
+    var namakata: String,
     @field:SerializedName("deskripsi")
-    var deskripsi:String,
+    var deskripsi: String,
     @field:SerializedName("image")
-    var image:String,
+    var image: String,
     @field:SerializedName("kategori")
-    var kategori:String
+    var kategori: String
 )

@@ -17,35 +17,34 @@ class KamusRepository public constructor(
     private val localDataSource: LocalDataSource,
     private val appExecutors: AppExecutors
 ) : IKamusRepository {
-
-    companion object {
-        @Volatile
-        private var instance: KamusRepository? = null
-
-        fun getInstance(
-            remoteData: RemoteDataSource,
-            localData: LocalDataSource,
-            appExecutors: AppExecutors
-        ): KamusRepository =
-            instance ?: synchronized(this) {
-                instance
-                    ?: KamusRepository(
-                        remoteData,
-                        localData,
-                        appExecutors
-                    )
-            }
-    }
+//
+//    companion object {
+//        @Volatile
+//        private var instance: KamusRepository? = null
+//
+//        fun getInstance(
+//            remoteData: RemoteDataSource,
+//            localData: LocalDataSource,
+//            appExecutors: AppExecutors
+//        ): KamusRepository =
+//            instance ?: synchronized(this) {
+//                instance
+//                    ?: KamusRepository(
+//                        remoteData,
+//                        localData,
+//                        appExecutors
+//                    )
+//            }
+//    }
 
     override fun getAllKamus(): Flow<Resource<List<Kamus>>> =
         object : NetworkBoundResource<List<Kamus>, List<KamusResponse>>() {
             override fun loadFromDB(): Flow<List<Kamus>> {
-                return localDataSource.getAllKamus().map{DataMapper.mapEntitiesToDomain(it)}
+                return localDataSource.getAllKamus().map { DataMapper.mapEntitiesToDomain(it) }
             }
 
             override fun shouldFetch(data: List<Kamus>?): Boolean =
-//                data == null || data.isEmpty()
-                true // ganti dengan true jika ingin selalu mengambil data dari internet
+                data == null || data.isEmpty()
 
             override suspend fun createCall(): Flow<ApiResponse<List<KamusResponse>>> =
                 remoteDataSource.getAllKamus()

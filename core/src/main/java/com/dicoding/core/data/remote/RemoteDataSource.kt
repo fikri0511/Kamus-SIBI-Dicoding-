@@ -12,29 +12,29 @@ import java.lang.Exception
 
 
 class RemoteDataSource public constructor(private val apiService: ApiService) {
-    companion object {
-        @Volatile
-        private var instance: RemoteDataSource? = null
-
-        fun getInstance(service: ApiService): RemoteDataSource =
-            instance ?: synchronized(this) {
-                instance ?: RemoteDataSource(service)
-            }
-    }
+//    companion object {
+//        @Volatile
+//        private var instance: RemoteDataSource? = null
+//
+//        fun getInstance(service: ApiService): RemoteDataSource =
+//            instance ?: synchronized(this) {
+//                instance ?: RemoteDataSource(service)
+//            }
+//    }
 
     fun getAllKamus(): Flow<ApiResponse<List<KamusResponse>>> {
         return flow {
             try {
                 val respons = apiService.getList()
-                val data=respons.kata
-                if (data.isNotEmpty()){
+                val data = respons.kata
+                if (data.isNotEmpty()) {
                     emit(ApiResponse.Success(respons.kata))
-                }else{
+                } else {
                     emit(ApiResponse.Empty)
                 }
-            }catch (e:Exception){
+            } catch (e: Exception) {
                 emit(ApiResponse.Error(e.toString()))
-                Log.e("RemoteDataSource",e.toString())
+                Log.e("RemoteDataSource", e.toString())
             }
         }.flowOn(Dispatchers.IO)
     }

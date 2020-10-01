@@ -6,6 +6,6 @@ import com.dicoding.core.domain.usecase.KamusUseCase
 
 
 class DetailKamusViewModel(private val kamusUseCase: KamusUseCase) : ViewModel() {
-    fun setFavoriteKamus(kamus: Kamus, newStatus:Boolean) =
+    fun setFavoriteKamus(kamus: Kamus, newStatus: Boolean) =
         kamusUseCase.setFavoriteKamus(kamus, newStatus)
 }

@@ -1,6 +1,5 @@
 package com.dicoding.core.domain.usecase
 
-import androidx.lifecycle.LiveData
 import com.dicoding.core.data.Resource
 import com.dicoding.core.domain.model.Kamus
 import kotlinx.coroutines.flow.Flow

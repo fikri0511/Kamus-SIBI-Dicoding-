@@ -1,6 +1,5 @@
 package com.dicoding.core.data.local.room
 
-import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.dicoding.core.data.local.entity.KamusEntity
 import kotlinx.coroutines.flow.Flow
