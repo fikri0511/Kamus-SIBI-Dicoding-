@@ -11,16 +11,7 @@ import kotlinx.coroutines.flow.flowOn
 import java.lang.Exception
 
 
-class RemoteDataSource public constructor(private val apiService: ApiService) {
-//    companion object {
-//        @Volatile
-//        private var instance: RemoteDataSource? = null
-//
-//        fun getInstance(service: ApiService): RemoteDataSource =
-//            instance ?: synchronized(this) {
-//                instance ?: RemoteDataSource(service)
-//            }
-//    }
+class RemoteDataSource constructor(private val apiService: ApiService) {
 
     fun getAllKamus(): Flow<ApiResponse<List<KamusResponse>>> {
         return flow {

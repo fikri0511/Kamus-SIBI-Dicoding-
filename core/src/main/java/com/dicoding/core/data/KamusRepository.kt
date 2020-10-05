@@ -12,30 +12,11 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
 
-class KamusRepository public constructor(
+class KamusRepository constructor(
     private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource,
     private val appExecutors: AppExecutors
 ) : IKamusRepository {
-//
-//    companion object {
-//        @Volatile
-//        private var instance: KamusRepository? = null
-//
-//        fun getInstance(
-//            remoteData: RemoteDataSource,
-//            localData: LocalDataSource,
-//            appExecutors: AppExecutors
-//        ): KamusRepository =
-//            instance ?: synchronized(this) {
-//                instance
-//                    ?: KamusRepository(
-//                        remoteData,
-//                        localData,
-//                        appExecutors
-//                    )
-//            }
-//    }
 
     override fun getAllKamus(): Flow<Resource<List<Kamus>>> =
         object : NetworkBoundResource<List<Kamus>, List<KamusResponse>>() {

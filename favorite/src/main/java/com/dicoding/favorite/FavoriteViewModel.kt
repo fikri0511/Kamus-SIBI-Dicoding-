@@ -1,4 +1,4 @@
-package com.dicoding.capstoneproject.view.favorite
+package com.dicoding.favorite
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData

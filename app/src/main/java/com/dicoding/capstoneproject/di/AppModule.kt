@@ -3,7 +3,6 @@ package com.dicoding.capstoneproject.di
 import com.dicoding.core.domain.usecase.KamusInteractor
 import com.dicoding.core.domain.usecase.KamusUseCase
 import com.dicoding.capstoneproject.view.detail.DetailKamusViewModel
-import com.dicoding.capstoneproject.view.favorite.FavoriteViewModel
 import com.dicoding.capstoneproject.view.main.MainMenuViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -15,7 +14,6 @@ val useCaseModule = module {
 val viewModelModule = module {
 
     viewModel { MainMenuViewModel(get()) }
-    viewModel { FavoriteViewModel(get()) }
     viewModel { DetailKamusViewModel(get()) }
 
 }

@@ -4,17 +4,7 @@ import com.dicoding.core.data.local.entity.KamusEntity
 import com.dicoding.core.data.local.room.KamusDao
 import kotlinx.coroutines.flow.Flow
 
-class LocalDataSource public constructor(private val kamusDao: KamusDao) {
-
-//    companion object {
-//        private var instance: LocalDataSource? = null
-//
-//        fun getInstance(kamusDao: KamusDao): LocalDataSource =
-//            instance ?: synchronized(this) {
-//                instance
-//                    ?: LocalDataSource(kamusDao)
-//            }
-//    }
+class LocalDataSource  constructor(private val kamusDao: KamusDao) {
 
     fun getAllKamus(): Flow<List<KamusEntity>> = kamusDao.getAllKamus()
 

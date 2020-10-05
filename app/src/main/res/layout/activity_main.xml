@@ -20,6 +20,7 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header"
+        android:name="androidx.navigation.dynamicfeatures.fragment.DynamicNavHostFragment"
         app:menu="@menu/menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -1,5 +1,6 @@
 package com.dicoding.kamus.maps
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -23,6 +24,7 @@ class MapsActivity : AppCompatActivity() {
         getKamusData()
     }
 
+    @SuppressLint("SetTextI18n")
     private fun getKamusData() {
         mapsViewModel.kamus.observe(this, Observer { kamus ->
             if (kamus != null) {

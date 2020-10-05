@@ -7,7 +7,6 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
-import com.dicoding.capstoneproject.view.favorite.FavoriteFragment
 import com.dicoding.capstoneproject.view.main.MainMenuFragment
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -49,8 +48,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 title = getString(R.string.app_name)
             }
             R.id.navigation_favorite -> {
-                fragment = FavoriteFragment()
-                title = getString(R.string.favorite)
+                startActivity(Intent(this, Class.forName("com.dicoding.favorite.FavoriteActivity")))
             }
             R.id.nav_map -> {
                 startActivity(Intent(this, Class.forName("com.dicoding.kamus.maps.MapsActivity")))

@@ -1,18 +1,18 @@
-package com.dicoding.capstoneproject.view.favorite
+package com.dicoding.favorite
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.content.Intent
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.dicoding.capstoneproject.R
 import com.dicoding.core.ui.KamusAdapter
 import com.dicoding.capstoneproject.view.detail.DetailKamusActivity
 import kotlinx.android.synthetic.main.fragment_favorite.*
 import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.core.context.loadKoinModules
 
 
 class FavoriteFragment : Fragment() {
@@ -23,6 +23,8 @@ class FavoriteFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        loadKoinModules(favoriteModule)
+
         return inflater.inflate(R.layout.fragment_favorite, container, false)
     }
 
@@ -37,7 +39,6 @@ class FavoriteFragment : Fragment() {
                 intent.putExtra(DetailKamusActivity.EXTRA_DATA, selectedData)
                 startActivity(intent)
             }
-
 
             favoriteViewModel.favoriteKamus.observe(viewLifecycleOwner, Observer { dataKamus ->
                 kamusAdapter.setData(dataKamus)
